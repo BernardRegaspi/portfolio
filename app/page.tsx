@@ -33,6 +33,22 @@ export default function Home() {
       }
     }
 
+    // Disable browser zoom with Ctrl+Scroll and Ctrl+Plus/Minus
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (
+        e.ctrlKey &&
+        (e.key === "+" || e.key === "-" || e.key === "=" || e.key === "0")
+      ) {
+        e.preventDefault();
+      }
+    };
+
+    const handleWheel = (e: WheelEvent) => {
+      if (e.ctrlKey) {
+        e.preventDefault();
+      }
+    };
+
     // Set flag to detect page reload on next load, but only for homepage
     const handleBeforeUnload = () => {
       if (window.location.pathname === "/") {
@@ -40,9 +56,13 @@ export default function Home() {
       }
     };
 
+    window.addEventListener("keydown", handleKeyDown);
+    window.addEventListener("wheel", handleWheel, { passive: false });
     window.addEventListener("beforeunload", handleBeforeUnload);
 
     return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener("wheel", handleWheel);
       window.removeEventListener("beforeunload", handleBeforeUnload);
     };
   }, []);
