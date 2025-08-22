@@ -27,6 +27,7 @@ import AndroidStudioIcon from "@/public/tools-icon/android-studio.svg";
 import KotlinIcon from "@/public/tools-icon/kotlin.svg";
 import ReactNativeIcon from "@/public/tools-icon/react.svg";
 import Helium from "@/public/tools-icon/helium.svg";
+import AmazonSeller from "@/public/tools-icon/amazon-seller.svg";
 
 // Register GSAP plugins
 if (typeof window !== "undefined") {
@@ -123,6 +124,7 @@ const toolsData: Tool[] = [
   // { name: "GitLab", category: "DevOps", color: "#FC6D26", icon: "🦊" },
   // { name: "Postman", category: "DevOps", color: "#FF6C37", icon: "📮" },
   { name: "Helium 10", category: "Analytics", color: "#0081ff", icon: Helium },
+  { name: "Seller Central", category: "Analytics", color: "#fa9826", icon: AmazonSeller },
 ];
 
 const categories = Array.from(new Set(toolsData.map((tool) => tool.category)));
