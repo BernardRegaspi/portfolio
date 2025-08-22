@@ -12,10 +12,8 @@ export default function PreloaderFinished({ onComplete }: PreloaderFinishedProps
   const [shouldShow, setShouldShow] = useState(true);
 
   useEffect(() => {
-    console.log("Preloader: Starting animation");
 
     const timer = setTimeout(() => {
-      console.log("Preloader: Hiding after animation");
       setVisible(false);
       setTimeout(() => {
         setShouldShow(false);

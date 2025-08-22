@@ -12,10 +12,8 @@ export default function Preloader({ onComplete }: PreloaderProps) {
   const [shouldShow, setShouldShow] = useState(true);
 
   useEffect(() => {
-    console.log("Preloader: Starting animation");
 
     const timer = setTimeout(() => {
-      console.log("Preloader: Hiding after animation");
       setVisible(false);
       setTimeout(() => {
         setShouldShow(false);
@@ -23,7 +21,6 @@ export default function Preloader({ onComplete }: PreloaderProps) {
       }, 900);
     }, 5000);
 
-    console.log("isVisible:", visible);
     return () => clearTimeout(timer);
   }, [onComplete, visible]);
 
