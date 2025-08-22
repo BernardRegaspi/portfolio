@@ -9,10 +9,7 @@ import { cn } from "@/lib/utils";
 import "../app/styles/HomePage.css";
 import { useRouter } from "next/navigation"; // Change this import
 import PageTransition from "./PageTransition";
-import {
-  animatePageTransition,
-  revealPageTransition,
-} from "@/utils/transition";
+import { animatePageTransition } from "@/utils/transition";
 import Link from "next/link";
 // Add this interface at the top of the file, after the imports
 interface Particle {
@@ -54,11 +51,6 @@ const HomePage = () => {
 
   const router = useRouter();
 
-  const handleNavigation = async (path: string) => {
-    await animatePageTransition();
-    router.push(path);
-  };
-
   const handleTransition = async (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     const href = e.currentTarget.href;
@@ -99,7 +91,7 @@ const HomePage = () => {
       <div className="flex-1 flex flex-col justify-center items-start p-8 md:p-16 space-y-6 relative z-[2]">
         {showText && (
           <p className="text-2xl md:text-3xl text-gray-300 mb-4">
-            Hi There, I'm{" "}
+            Hi There, I&apos;m{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 font-bold">
               Bernard
             </span>
@@ -135,10 +127,10 @@ const HomePage = () => {
           )}
         >
           <p className="text-xl md:text-2xl text-white/90 leading-relaxed text-shadow">
-            I'm a Full‑Stack & Mobile Developer, Graphic Designer, and Virtual
-            Assistant — I build scalable backends and modern React/Next.js
-            frontends, craft native-like mobile apps (React Native), and design
-            polished brand and UI assets.
+            I&apos;m a Full‑Stack & Mobile Developer, Graphic Designer, and
+            Virtual Assistant — I build scalable backends and modern
+            React/Next.js frontends, craft native-like mobile apps (React
+            Native), and design polished brand and UI assets.
           </p>
           <p className="text-lg md:text-xl text-white/80 text-shadow">
             Need a landing page, cross-platform app, brand refresh, or ongoing
@@ -227,7 +219,7 @@ const HomePage = () => {
             <div className="absolute -top-24 left-1/2 transform -translate-x-1/2 bg-white/90 px-8 py-4 rounded-3xl shadow-xl z-20 backdrop-blur-sm border border-white/20 hover:scale-105 transition-transform duration-300">
               <div className="relative">
                 <p className="text-gray-800 font-medium text-xl text-center">
-                  Let's build something amazing together!
+                  Let&apos;s build something amazing together!
                 </p>
                 <div className="absolute -bottom-[28px] left-1/2 transform -translate-x-1/2 w-6 h-6 bg-white/90 rotate-45 border-b border-r border-white/20"></div>
               </div>

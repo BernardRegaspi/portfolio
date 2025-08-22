@@ -73,7 +73,7 @@ const socialLinks = [
     name: "Facebook",
     url: "https://www.facebook.com/bernardbrennan.regaspi.3/",
     gradient: "from-blue-600 to-blue-800",
-  }
+  },
 ];
 
 interface Particle {
@@ -137,7 +137,7 @@ const ContactMe = () => {
       await new Promise((resolve) => setTimeout(resolve, 2000));
       setSubmitStatus("Message sent successfully! I'll get back to you soon.");
       setFormData({ name: "", email: "", subject: "", message: "" });
-    } catch (error) {
+    } catch {
       setSubmitStatus("Something went wrong. Please try again.");
     } finally {
       setIsSubmitting(false);
@@ -177,9 +177,9 @@ const ContactMe = () => {
             </span>
           </h1>
           <p className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto leading-relaxed text-shadow animate-fade-in-up animation-delay-300">
-            Have a project in mind? Let's collaborate and bring your ideas to
-            life. I'm always excited to work on new challenges and create
-            amazing digital experiences.
+            Have a project in mind? Let&apos;s collaborate and bring your ideas
+            to life. I&apos;m always excited to work on new challenges and
+            create amazing digital experiences.
           </p>
         </div>
 
@@ -188,13 +188,13 @@ const ContactMe = () => {
           <div className="space-y-8 animate-fade-in-up animation-delay-600">
             <div>
               <h2 className="text-3xl font-bold text-white mb-8 text-shadow">
-                Let's Start a Conversation
+                Let&apos;s Start a Conversation
               </h2>
               <p className="text-lg text-white/80 mb-8">
-                Ready to discuss your next project? I'm here to help you
-                transform your vision into reality. Whether it's web
-                development, mobile apps, design, or Amazon services - let's
-                talk!
+                Ready to discuss your next project? I&apos;m here to help you
+                transform your vision into reality. Whether it&apos;s web
+                development, mobile apps, design, or Amazon services -
+                let&apos;s talk!
               </p>
             </div>
 
@@ -397,8 +397,8 @@ const ContactMe = () => {
               Ready to Get Started?
             </h3>
             <p className="text-xl text-white/80 mb-6">
-              Let's discuss your project requirements and how I can help you
-              achieve your goals.
+              Let&apos;s discuss your project requirements and how I can help
+              you achieve your goals.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a

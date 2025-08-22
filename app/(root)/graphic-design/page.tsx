@@ -1,5 +1,5 @@
-import React from 'react'
-import PageTransition from '@/components/PageTransition'
+import React from "react";
+import PageTransition from "@/components/PageTransition";
 
 const GraphicDesign = () => {
   return (
@@ -9,12 +9,13 @@ const GraphicDesign = () => {
         <h1 className="text-4xl font-bold mb-8 text-center">Graphic Design</h1>
         <div className="bg-card p-6 rounded-lg border border-border">
           <p className="text-muted-foreground text-lg">
-            Welcome to the Graphic Design section. Here you'll find information about my graphic design services and portfolio.
+            Welcome to the Graphic Design section. Here you&apos;ll find
+            information about my graphic design services and portfolio.
           </p>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default GraphicDesign
+export default GraphicDesign;

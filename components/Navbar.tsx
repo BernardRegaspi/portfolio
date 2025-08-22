@@ -222,7 +222,7 @@ const Navbar = () => {
                   onClick={() => scrollToSection("contact")}
                   className="px-6 py-2.5 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-300 hover:scale-105 hover:shadow-lg"
                 >
-                  Let's Talk
+                  Let&apos;s Talk
                 </button>
               </div>
 
@@ -346,7 +346,7 @@ const Navbar = () => {
                 className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-300 hover:scale-105"
               >
                 <FaEnvelope size={16} />
-                Let's Talk
+                Let&apos;s Talk
               </button>
             </div>
           </div>

@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Award, Calendar, ExternalLink, X, Maximize2 } from "lucide-react";
+import { Award, X, Maximize2 } from "lucide-react";
 import { Certificate } from "@/types/certificates";
 import { certificatesData } from "@/data/certificates";
 import Image from "next/image";

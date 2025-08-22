@@ -268,8 +268,8 @@ const MyServices = () => {
         {/* Call to action */}
         <div className="text-center mt-16 animate-fade-in-up animation-delay-900">
           <p className="text-xl text-white/80 mb-8">
-            Ready to start your project? Let's discuss how I can help bring your
-            vision to life.
+            Ready to start your project? Let&apos;s discuss how I can help bring
+            your vision to life.
           </p>
           <button className="skill-btn px-8 py-4 text-lg font-semibold bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 transition-all duration-300">
             Get Started Today
