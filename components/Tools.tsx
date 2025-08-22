@@ -124,7 +124,12 @@ const toolsData: Tool[] = [
   // { name: "GitLab", category: "DevOps", color: "#FC6D26", icon: "🦊" },
   // { name: "Postman", category: "DevOps", color: "#FF6C37", icon: "📮" },
   { name: "Helium 10", category: "Analytics", color: "#0081ff", icon: Helium },
-  { name: "Seller Central", category: "Analytics", color: "#fa9826", icon: AmazonSeller },
+  {
+    name: "Seller Central",
+    category: "Analytics",
+    color: "#fa9826",
+    icon: AmazonSeller,
+  },
 ];
 
 const categories = Array.from(new Set(toolsData.map((tool) => tool.category)));
@@ -334,7 +339,7 @@ const Tools = () => {
                   className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 mb-2"
                   initial={{ scale: 0 }}
                   whileInView={{ scale: 1 }}
-                  transition={{ type: "spring", stiffness: 300, delay: 0.1 }}
+                  transition={{ type: "spring", stiffness: 200, delay: 0.1 }}
                 >
                   {toolsData.length}+
                 </motion.div>
@@ -345,7 +350,7 @@ const Tools = () => {
                   className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500 mb-2"
                   initial={{ scale: 0 }}
                   whileInView={{ scale: 1 }}
-                  transition={{ type: "spring", stiffness: 300, delay: 0.2 }}
+                  transition={{ type: "spring", stiffness: 200, delay: 0.2 }}
                 >
                   {categories.length}
                 </motion.div>

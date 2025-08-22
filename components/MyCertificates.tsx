@@ -84,6 +84,8 @@ const MyCertificates: React.FC<CertificatesPreviewProps> = ({
                   src={certificate.imageUrl}
                   alt={certificate.title}
                   fill
+                  loading="lazy"
+                  quality={75}
                 />
                 <div className="absolute top-4 right-4 bg-black bg-opacity-30 px-2 py-1 rounded-full">
                   <span className="text-white text-xs font-medium">

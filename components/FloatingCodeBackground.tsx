@@ -83,11 +83,11 @@ const FloatingCodeBackground: React.FC = () => {
       }, (newElement.animationDuration + newElement.animationDelay + 2) * 1000);
     };
 
-    for (let i = 0; i < 5; i++) {
-      setTimeout(createFloatingElement, i * 800);
+    for (let i = 0; i < 3; i++) {
+      setTimeout(createFloatingElement, i * 1200);
     }
 
-    const interval = setInterval(createFloatingElement, 3000);
+    const interval = setInterval(createFloatingElement, 5000);
     return () => clearInterval(interval);
   }, []);
 

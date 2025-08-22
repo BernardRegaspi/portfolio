@@ -30,7 +30,7 @@ const HomePage = () => {
 
     // Create animated particles
     const createParticles = () => {
-      const particleCount = 50;
+      const particleCount = 25;
       const newParticles: Particle[] = [];
 
       for (let i = 0; i < particleCount; i++) {
