@@ -1,0 +1,56 @@
+/* Navbar specific styles to prevent conflicts with main content */
+
+.navbar-container {
+  isolation: isolate;
+  contain: layout style;
+  pointer-events: auto;
+}
+
+.navbar-container * {
+  box-sizing: border-box;
+}
+
+.navbar-mobile-menu {
+  isolation: isolate;
+  contain: layout style;
+}
+
+/* Ensure navbar doesn't affect content colors */
+.navbar-container,
+.navbar-mobile-menu {
+  color: inherit;
+  background-clip: padding-box;
+}
+
+/* Prevent color inheritance issues */
+.navbar-container a,
+.navbar-container button,
+.navbar-container span,
+.navbar-mobile-menu a,
+.navbar-mobile-menu button,
+.navbar-mobile-menu span {
+  color: inherit;
+}
+
+/* Override any global styles that might affect the navbar */
+.navbar-container .container {
+  color: inherit;
+}
+
+/* Ensure proper stacking context */
+.navbar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.navbar-mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9998;
+}

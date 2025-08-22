@@ -94,7 +94,7 @@
 
 .anime .preload .progress {
     width: 70vw !important;
-    color: #14e956 !important;
+    color: #916ff8 !important;
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
@@ -131,7 +131,7 @@
 }
 
 .css-5xe99f-MuiLinearProgress-bar1 {
-    background-color: #14e956 !important;
+    background-color: #916ff8 !important;
 }
 
 .css-1kjyx0o-MuiTypography-root {
@@ -175,7 +175,7 @@
 }
 
 .css-t752vm {
-    background-color: #14e956 !important;
+    background-color: #916ff8 !important;
 }
 
 .css-16e5s8c {
@@ -211,7 +211,7 @@
         fill: transparent;
     }
     to {
-        fill: #14e956;
+        fill: #916ff8;
     }
 }
 

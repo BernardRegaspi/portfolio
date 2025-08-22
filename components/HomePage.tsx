@@ -3,13 +3,16 @@
 import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
 import { useState, useEffect } from "react";
-import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaFacebook } from "react-icons/fa";
 import FloatingCodeBackground from "./FloatingCodeBackground";
 import { cn } from "@/lib/utils";
 import "../app/styles/HomePage.css";
 import { useRouter } from "next/navigation"; // Change this import
 import PageTransition from "./PageTransition";
-import { animatePageTransition, revealPageTransition } from "@/utils/transition";
+import {
+  animatePageTransition,
+  revealPageTransition,
+} from "@/utils/transition";
 import Link from "next/link";
 // Add this interface at the top of the file, after the imports
 interface Particle {
@@ -59,16 +62,19 @@ const HomePage = () => {
   const handleTransition = async (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     const href = e.currentTarget.href;
-    
+
     // Trigger closing transition
     await animatePageTransition();
-    
+
     // Navigate to the new page
-    router.push(href.replace(window.location.origin, ''));
+    router.push(href.replace(window.location.origin, ""));
   };
 
   return (
-    <div className="flex flex-col md:flex-row min-h-screen overflow-hidden relative">
+    <section
+      id="home"
+      className="flex flex-col md:flex-row min-h-screen overflow-hidden relative"
+    >
       <PageTransition />
       {/* Dark theme background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#0f0f23] via-[#1a1a2e] to-[#16213e] z-0"></div>
@@ -92,13 +98,13 @@ const HomePage = () => {
 
       <div className="flex-1 flex flex-col justify-center items-start p-8 md:p-16 space-y-6 relative z-[2]">
         {showText && (
-            <p className="text-2xl md:text-3xl text-gray-300 mb-4">
-              Hi There, I'm{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 font-bold">
-                Bernard
-              </span>
-              <span className="ml-2 animate-bounce">👋</span>
-            </p>
+          <p className="text-2xl md:text-3xl text-gray-300 mb-4">
+            Hi There, I'm{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 font-bold">
+              Bernard
+            </span>
+            <span className="ml-2 animate-bounce">👋</span>
+          </p>
         )}
 
         {showText && (
@@ -129,14 +135,16 @@ const HomePage = () => {
           )}
         >
           <p className="text-xl md:text-2xl text-white/90 leading-relaxed text-shadow">
-            Software Engineer & Creative Technologist. I craft seamless digital
-            experiences through clean code, impactful design, and data-driven
-            insights.
+            I'm a Full‑Stack & Mobile Developer, Graphic Designer, and Virtual
+            Assistant — I build scalable backends and modern React/Next.js
+            frontends, craft native-like mobile apps (React Native), and design
+            polished brand and UI assets.
           </p>
           <p className="text-lg md:text-xl text-white/80 text-shadow">
-            From full-stack web applications and mobile apps to compelling
-            visuals and strategic analysis, I bridge creativity with technology
-            to deliver smart, scalable solutions.
+            Need a landing page, cross-platform app, brand refresh, or ongoing
+            project support? I deliver clean, maintainable code, thoughtful
+            design, and reliable virtual assistance to keep your project on time
+            and on budget.
           </p>
         </div>
 
@@ -187,14 +195,26 @@ const HomePage = () => {
             showText ? "animate-fade-in-up animation-delay-1200" : "opacity-0"
           )}
         >
-          <a href="#" className="social-link">
+          <a
+            href="https://github.com/BernardRegaspi"
+            className="social-link"
+            target="_blank"
+          >
             <FaGithub size={24} />
           </a>
-          <a href="#" className="social-link">
+          <a
+            href="https://www.linkedin.com/in/bernard-brennan-regaspi-378b1927b/"
+            className="social-link"
+            target="_blank"
+          >
             <FaLinkedin size={24} />
           </a>
-          <a href="#" className="social-link">
-            <FaTwitter size={24} />
+          <a
+            href="https://www.facebook.com/bernardbrennan.regaspi.3/"
+            className="social-link"
+            target="_blank"
+          >
+            <FaFacebook size={24} />
           </a>
         </div>
       </div>
@@ -207,7 +227,7 @@ const HomePage = () => {
             <div className="absolute -top-24 left-1/2 transform -translate-x-1/2 bg-white/90 px-8 py-4 rounded-3xl shadow-xl z-20 backdrop-blur-sm border border-white/20 hover:scale-105 transition-transform duration-300">
               <div className="relative">
                 <p className="text-gray-800 font-medium text-xl text-center">
-                    Let's build something amazing together!
+                  Let's build something amazing together!
                 </p>
                 <div className="absolute -bottom-[28px] left-1/2 transform -translate-x-1/2 w-6 h-6 bg-white/90 rotate-45 border-b border-r border-white/20"></div>
               </div>
@@ -229,7 +249,7 @@ const HomePage = () => {
           </div>
         )}
       </div>
-    </div>
+    </section>
   );
 };
 
