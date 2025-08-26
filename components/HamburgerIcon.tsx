@@ -4,7 +4,6 @@ import { useState, useEffect, useRef } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
-import Image from "next/image";
 import {
   FaCode,
   FaPalette,
@@ -18,6 +17,15 @@ import {
   FaAmazon,
 } from "react-icons/fa";
 import { animatePageTransition } from "@/utils/transition";
+import Image from "next/image";
+
+// interface MenuItem {
+//   title: string;
+//   href: string;
+//   icon: React.ReactNode;
+//   description: string;
+//   color: string;
+// }
 
 interface SocialLink {
   name: string;
@@ -230,16 +238,14 @@ const HamburgerIcon = ({
   const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const currentNavigationItems = navigationItems[variant];
+//   const accentColor = variant === "graphic" ? "#3ca0f2" : "blue-400";
 
   // Close mobile menu when route changes
   useEffect(() => {
     if (isMenuOpen) {
-      setIsMenuOpen(false);
-      if (!isAnimating) {
-        setIsAnimating(true);
-      }
+      handleCloseWithAnimation();
     }
-  }, [pathname, isMenuOpen, isAnimating]);
+  }, [pathname]);
 
   // Handle dialog open/close
   useEffect(() => {
@@ -327,18 +333,12 @@ const HamburgerIcon = ({
     if (!dialog) return;
 
     const handleClose = () => {
-      setIsMenuOpen(false);
-      if (!isAnimating) {
-        setIsAnimating(true);
-      }
+      handleCloseWithAnimation();
     };
 
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
-        setIsMenuOpen(false);
-        if (!isAnimating) {
-          setIsAnimating(true);
-        }
+        handleCloseWithAnimation();
       }
     };
 
@@ -351,7 +351,7 @@ const HamburgerIcon = ({
       dialog.removeEventListener("cancel", handleClose);
       document.removeEventListener("keydown", handleKeyDown);
     };
-  }, [isAnimating]);
+  }, []);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -585,10 +585,9 @@ const HamburgerIcon = ({
                             <Image
                               src="/images/profile3.png"
                               alt="Bernard - Creative Professional"
+                              className="w-full h-full object-cover"
                               width={320}
                               height={320}
-                              className="w-full h-full object-cover"
-                              priority
                             />
                           </div>
                         </div>

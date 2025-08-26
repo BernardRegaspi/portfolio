@@ -18,6 +18,7 @@ interface WorkItem {
 const MyWorks: React.FC<MyWorksProps> = ({ onClose }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
+  const [isAutoPlay, setIsAutoPlay] = useState(true);
   const [isImageLoading, setIsImageLoading] = useState(true);
   const [isTransitioning, setIsTransitioning] = useState(false);
 
@@ -79,6 +80,28 @@ const MyWorks: React.FC<MyWorksProps> = ({ onClose }) => {
     selectedCategory === "All"
       ? allWorks
       : allWorks.filter((work) => work.category === selectedCategory);
+
+  // Auto-next functionality
+  useEffect(() => {
+    if (!isAutoPlay || filteredWorks.length <= 1) {
+      return;
+    }
+
+    // Image change interval
+    const imageInterval = setInterval(() => {
+      setIsTransitioning(true);
+      setTimeout(() => {
+        setCurrentImageIndex((prevIndex) =>
+          prevIndex === filteredWorks.length - 1 ? 0 : prevIndex + 1
+        );
+        setIsTransitioning(false);
+      }, 300);
+    }, 4000);
+
+    return () => {
+      clearInterval(imageInterval);
+    };
+  }, [isAutoPlay, filteredWorks.length, currentImageIndex]);
 
   // Reset current image index when category changes
   useEffect(() => {
@@ -184,6 +207,43 @@ const MyWorks: React.FC<MyWorksProps> = ({ onClose }) => {
       {/* Category Filter */}
       <div className="relative z-10 mb-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Autoplay Toggle */}
+          <div className="flex justify-center mb-6">
+            <button
+              onClick={() => setIsAutoPlay(!isAutoPlay)}
+              className={cn(
+                "flex items-center gap-2 px-6 py-3 rounded-full transition-all duration-300 font-semibold",
+                isAutoPlay
+                  ? "bg-[#3ca0f2] text-white shadow-lg"
+                  : "bg-white/10 text-white hover:bg-white/20 border border-white/20"
+              )}
+            >
+              <svg
+                className="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                {isAutoPlay ? (
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M10 9v6m4-6v6m7-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                ) : (
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                )}
+              </svg>
+              {isAutoPlay ? "Pause Autoplay" : "Start Autoplay"}
+            </button>
+          </div>
+
           <div className="flex flex-wrap justify-center gap-4">
             {categories.map((category) => (
               <button
