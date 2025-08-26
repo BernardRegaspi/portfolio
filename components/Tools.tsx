@@ -67,7 +67,7 @@ const toolsData: Tool[] = [
     color: "#F7DF1E",
     icon: JavaScriptIcon,
   },
-  { name: "CSS/SASS", category: "Frontend", color: "#1572B6", icon: CSSIcon },
+  { name: "CSS/SASS", category: "Frontend", color: "#cb6699", icon: CSSIcon },
   {
     name: "Bootstrap",
     category: "Frontend",
@@ -203,7 +203,7 @@ const Tools = () => {
         >
           <h1
             ref={titleRef}
-            className="text-6xl md:text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-300 to-gray-500 mb-6"
+            className="text-5xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-300 to-gray-500 pb-6"
           >
             Tools & Technologies
           </h1>

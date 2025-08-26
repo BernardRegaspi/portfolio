@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { animatePageTransition } from "@/utils/transition";
 import {
   FaGithub,
@@ -80,6 +80,7 @@ const Footer = () => {
   const [currentYear] = useState(new Date().getFullYear());
   const [showScrollTop, setShowScrollTop] = useState(false);
   const router = useRouter();
+  const pathname = usePathname();
 
   // Smooth scroll function
   const scrollToSection = (sectionId: string) => {
@@ -96,12 +97,18 @@ const Footer = () => {
   const handleTransition = async (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     const href = e.currentTarget.href;
+    const targetPath = href.replace(window.location.origin, "");
+
+    // Don't animate transition if we're already on the target page
+    if (pathname === targetPath) {
+      return;
+    }
 
     // Trigger closing transition
     await animatePageTransition();
 
     // Navigate to the new page
-    router.push(href.replace(window.location.origin, ""));
+    router.push(targetPath);
   };
 
   useEffect(() => {

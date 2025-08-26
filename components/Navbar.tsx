@@ -15,6 +15,7 @@ import {
   FaGithub,
   FaLinkedin,
 } from "react-icons/fa";
+import HamburgerIcon from "./HamburgerIcon";
 import "../app/styles/HomePage.css";
 
 // Adding a separate CSS file for navbar-specific styles
@@ -216,14 +217,9 @@ const Navbar = () => {
                 ))}
               </div>
 
-              {/* Call to Action Button - Desktop */}
+              {/* Desktop Hamburger Menu Button */}
               <div className="hidden md:block">
-                <button
-                  onClick={() => scrollToSection("contact")}
-                  className="px-6 py-2.5 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-300 hover:scale-105 hover:shadow-lg"
-                >
-                  Let&apos;s Talk
-                </button>
+                <HamburgerIcon variant="main" />
               </div>
 
               {/* Mobile Menu Button */}
@@ -239,7 +235,7 @@ const Navbar = () => {
         </nav>
       </div>
 
-      {/* Mobile Menu Overlay */}
+      {/* Mobile Menu Overlay - Only for mobile */}
       {isMenuOpen && (
         <div className="navbar-mobile-menu fixed inset-0 z-40 md:hidden">
           {/* Backdrop */}
