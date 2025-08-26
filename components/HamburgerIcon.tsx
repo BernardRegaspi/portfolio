@@ -4,31 +4,20 @@ import { useState, useEffect, useRef } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 import {
   FaCode,
   FaPalette,
   FaMobile,
-  FaUserTie,
   FaGithub,
   FaLinkedin,
   FaEnvelope,
   FaTwitter,
   FaInstagram,
   FaHome,
-  FaTools,
-  FaCertificate,
-  FaBriefcase,
   FaAmazon,
 } from "react-icons/fa";
 import { animatePageTransition } from "@/utils/transition";
-
-interface MenuItem {
-  title: string;
-  href: string;
-  icon: React.ReactNode;
-  description: string;
-  color: string;
-}
 
 interface SocialLink {
   name: string;
@@ -241,14 +230,16 @@ const HamburgerIcon = ({
   const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const currentNavigationItems = navigationItems[variant];
-  const accentColor = variant === "graphic" ? "#3ca0f2" : "blue-400";
 
   // Close mobile menu when route changes
   useEffect(() => {
     if (isMenuOpen) {
-      handleCloseWithAnimation();
+      setIsMenuOpen(false);
+      if (!isAnimating) {
+        setIsAnimating(true);
+      }
     }
-  }, [pathname]);
+  }, [pathname, isMenuOpen, isAnimating]);
 
   // Handle dialog open/close
   useEffect(() => {
@@ -336,12 +327,18 @@ const HamburgerIcon = ({
     if (!dialog) return;
 
     const handleClose = () => {
-      handleCloseWithAnimation();
+      setIsMenuOpen(false);
+      if (!isAnimating) {
+        setIsAnimating(true);
+      }
     };
 
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
-        handleCloseWithAnimation();
+        setIsMenuOpen(false);
+        if (!isAnimating) {
+          setIsAnimating(true);
+        }
       }
     };
 
@@ -354,7 +351,7 @@ const HamburgerIcon = ({
       dialog.removeEventListener("cancel", handleClose);
       document.removeEventListener("keydown", handleKeyDown);
     };
-  }, []);
+  }, [isAnimating]);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -585,10 +582,13 @@ const HamburgerIcon = ({
                             )}
                           />
                           <div className="relative w-80 h-80 mx-auto rounded-full overflow-hidden border-4 border-white/20">
-                            <img
+                            <Image
                               src="/images/profile3.png"
                               alt="Bernard - Creative Professional"
+                              width={320}
+                              height={320}
                               className="w-full h-full object-cover"
+                              priority
                             />
                           </div>
                         </div>
@@ -642,7 +642,7 @@ const HamburgerIcon = ({
                               : "bg-gradient-to-r from-blue-500 to-purple-600"
                           )}
                         >
-                          Let's Work Together
+                          Let&apos;s Work Together
                         </motion.button>
                       </motion.div>
                     </div>

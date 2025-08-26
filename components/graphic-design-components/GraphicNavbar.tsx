@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import HamburgerIcon from "../HamburgerIcon";
@@ -10,7 +9,6 @@ import "../../app/styles/HomePage.css";
 
 const GraphicNavbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const pathname = usePathname();
 
   // Handle scroll effect
   useEffect(() => {

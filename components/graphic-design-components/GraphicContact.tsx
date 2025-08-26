@@ -3,13 +3,10 @@
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import {
-  FaGithub,
-  FaLinkedin,
   FaEnvelope,
   FaPhone,
   FaMapMarkerAlt,
   FaPaperPlane,
-  FaFacebook,
   FaPalette,
   FaPaintBrush,
   FaImages,
@@ -54,28 +51,6 @@ const contactInfo: ContactInfo[] = [
     title: "Location",
     value: "Remote / Available Worldwide",
     gradient: "from-blue-500 to-[#3ca0f2]",
-  },
-];
-
-// Social links
-const socialLinks = [
-  {
-    icon: <FaGithub size={24} />,
-    name: "GitHub",
-    url: "https://github.com/BernardRegaspi",
-    gradient: "from-gray-600 to-gray-800",
-  },
-  {
-    icon: <FaLinkedin size={24} />,
-    name: "LinkedIn",
-    url: "https://www.linkedin.com/in/bernard-brennan-regaspi-378b1927b/",
-    gradient: "from-[#3ca0f2] to-blue-800",
-  },
-  {
-    icon: <FaFacebook size={24} />,
-    name: "Facebook",
-    url: "https://www.facebook.com/bernardbrennan.regaspi.3/",
-    gradient: "from-blue-600 to-[#3ca0f2]",
   },
 ];
 
@@ -203,12 +178,12 @@ const GraphicContact = () => {
         {/* Header section */}
         <div className="text-center mb-16">
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 text-shadow animate-fade-in-up">
-            Let's Create{" "}
+            Let&apos;s Create{" "}
             <span className="text-[#3ca0f2] font-bold">Together</span>
             <span className="ml-2">🎨</span>
           </h1>
           <p className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto leading-relaxed text-shadow animate-fade-in-up animation-delay-300">
-            Ready to bring your brand vision to life? Let's collaborate on
+            Ready to bring your brand vision to life? Let&apos;s collaborate on
             creating stunning visual designs that tell your story and captivate
             your audience.
           </p>
@@ -219,12 +194,13 @@ const GraphicContact = () => {
           <div className="space-y-8 animate-fade-in-up animation-delay-600">
             <div>
               <h2 className="text-3xl font-bold text-white mb-8 text-shadow">
-                Let's Discuss Your Design Project
+                Let&apos;s Discuss Your Design Project
               </h2>
               <p className="text-lg text-white/80 mb-8">
                 Whether you need a complete brand identity, marketing materials,
-                or custom illustrations - I'm here to transform your creative
-                vision into compelling visual designs that make an impact.
+                or custom illustrations - I&apos;m here to transform your
+                creative vision into compelling visual designs that make an
+                impact.
               </p>
             </div>
 

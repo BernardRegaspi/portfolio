@@ -18,7 +18,6 @@ interface WorkItem {
 const MyWorks: React.FC<MyWorksProps> = ({ onClose }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
-  const [isAutoPlay, setIsAutoPlay] = useState(true);
   const [isImageLoading, setIsImageLoading] = useState(true);
   const [isTransitioning, setIsTransitioning] = useState(false);
 
@@ -80,28 +79,6 @@ const MyWorks: React.FC<MyWorksProps> = ({ onClose }) => {
     selectedCategory === "All"
       ? allWorks
       : allWorks.filter((work) => work.category === selectedCategory);
-
-  // Auto-next functionality
-  useEffect(() => {
-    if (!isAutoPlay || filteredWorks.length <= 1) {
-      return;
-    }
-
-    // Image change interval
-    const imageInterval = setInterval(() => {
-      setIsTransitioning(true);
-      setTimeout(() => {
-        setCurrentImageIndex((prevIndex) =>
-          prevIndex === filteredWorks.length - 1 ? 0 : prevIndex + 1
-        );
-        setIsTransitioning(false);
-      }, 300);
-    }, 4000);
-
-    return () => {
-      clearInterval(imageInterval);
-    };
-  }, [isAutoPlay, filteredWorks.length, currentImageIndex]);
 
   // Reset current image index when category changes
   useEffect(() => {

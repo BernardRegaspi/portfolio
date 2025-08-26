@@ -6,9 +6,7 @@ import FloatingDesignToolsBackground from "./FloatingDesignToolsBackground";
 import { cn } from "@/lib/utils";
 import "../../app/styles/HomePage.css";
 import "../../app/styles/GraphicDesign.css";
-import { useRouter } from "next/navigation";
 import PageTransition from "../PageTransition";
-import { animatePageTransition } from "@/utils/transition";
 
 // Interface for floating particles (white dots)
 interface Particle {
@@ -47,19 +45,6 @@ const GraphicHomePage = () => {
 
     createParticles();
   }, []);
-
-  const router = useRouter();
-
-  const handleTransition = async (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    const href = e.currentTarget.href;
-
-    // Trigger closing transition
-    await animatePageTransition();
-
-    // Navigate to the new page
-    router.push(href.replace(window.location.origin, ""));
-  };
 
   return (
     <section
