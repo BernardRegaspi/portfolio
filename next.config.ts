@@ -9,8 +9,9 @@ const nextConfig: NextConfig = {
   },
   poweredByHeader: false,
   compress: true,
+  // Remove CSS optimization to prevent preload warnings
   experimental: {
-    optimizeCss: true,
+    optimizeCss: false,
   },
 };
 

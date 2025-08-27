@@ -9,6 +9,181 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ==========================================================================
+   HomePage.css - Consolidated to prevent CSS preload warnings
+   ========================================================================== */
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(-20px) rotate(180deg);
+    opacity: 1;
+  }
+}
+
+/* Collision Animation Keyframes */
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-100vw) scale(0.8);
+    opacity: 0;
+  }
+  70% {
+    transform: translateX(5px) scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+    transform: translateX(100vw) scale(0.8);
+    opacity: 0;
+  }
+  70% {
+    transform: translateX(-5px) scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+}
+
+/* ==========================================================================
+   FloatingCodeBackground.css - Consolidated to prevent CSS preload warnings
+   ========================================================================== */
+
+@keyframes float-1 {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translate(20px, -30px) rotate(5deg);
+    opacity: 1;
+  }
+}
+
+@keyframes float-2 {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translate(-15px, -25px) rotate(-3deg);
+    opacity: 1;
+  }
+}
+
+@keyframes float-3 {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translate(25px, -20px) rotate(2deg);
+    opacity: 1;
+  }
+}
+
+@keyframes float-4 {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translate(-20px, -35px) rotate(-4deg);
+    opacity: 1;
+  }
+}
+
+@keyframes float-5 {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translate(18px, -28px) rotate(3deg);
+    opacity: 1;
+  }
+}
+
+@keyframes float-6 {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translate(-22px, -32px) rotate(-5deg);
+    opacity: 1;
+  }
+}
+
+@keyframes particle-float {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(-100px) scale(1.2);
+    opacity: 0.7;
+  }
+  90% {
+    opacity: 0.3;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================================================
+   Preloader.css - Consolidated to prevent CSS preload warnings
+   ========================================================================== */
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
 body {
   background: #0a0a0a;
   color: #f5f5f5;

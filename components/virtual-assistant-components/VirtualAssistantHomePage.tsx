@@ -4,8 +4,6 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import FloatingCodeBackground from "./FloatingAmazonVABackground";
 import { cn } from "@/lib/utils";
-import "../../app/styles/HomePage.css";
-import "../../app/styles/GraphicDesign.css";
 
 // Interface for floating particles (white dots)
 interface Particle {

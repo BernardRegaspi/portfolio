@@ -27,7 +27,7 @@ export const certificatesData: Certificate[] = [
     issuer: "AmazeNation",
     date: "2025",
     description: "Mastered Amazon marketplace optimization and analytics using industry-standard tools.",
-    imageUrl: "/certificates/amazon.jpg",
+    imageUrl: "/certificates/amazon.png",
     credentialUrl: "https://aws.amazon.com/verification",
     skills: ["Amazon", "Tool4Seller", "Helium10", "Microsoft Excell"]
   },

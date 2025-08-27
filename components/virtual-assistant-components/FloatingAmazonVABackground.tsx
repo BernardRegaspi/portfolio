@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import "../../app/styles/FloatingCodeBackground.css";
 
 interface DynamicElement {
   id: number;
