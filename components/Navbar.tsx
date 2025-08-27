@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import {
@@ -172,7 +171,7 @@ const Navbar = () => {
           <div className="container mx-auto px-6">
             <div className="flex items-center justify-between h-20">
               {/* Logo */}
-              <Link href="/" className="flex items-center space-x-2 group">
+              <div className="flex items-center space-x-2 group">
                 <div className="relative">
                   {/* <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg blur opacity-30 group-hover:opacity-60 transition duration-300"></div> */}
                   <div className="relative px-4 py-2 bg-[#0f0f23] rounded-lg border border-white/10">
@@ -182,7 +181,7 @@ const Navbar = () => {
                     <span className="text-2xl font-bold text-white">Dev</span>
                   </div>
                 </div>
-              </Link>
+              </div>
 
               {/* Desktop Navigation */}
               <div className="hidden md:flex items-center space-x-1">

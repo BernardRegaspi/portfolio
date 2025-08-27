@@ -19,14 +19,6 @@ import {
 import { animatePageTransition } from "@/utils/transition";
 import Image from "next/image";
 
-// interface MenuItem {
-//   title: string;
-//   href: string;
-//   icon: React.ReactNode;
-//   description: string;
-//   color: string;
-// }
-
 interface SocialLink {
   name: string;
   href: string;
@@ -36,7 +28,7 @@ interface SocialLink {
 
 interface HamburgerIconProps {
   className?: string;
-  variant?: "main" | "graphic"; // Different menu types
+  variant?: "main" | "work"; // Different menu types
   onNavigate?: (href: string) => void;
 }
 
@@ -66,13 +58,13 @@ const navigationItems = {
     },
     {
       title: "Amazon Virtual Assistant",
-      href: "/virtual-analyst",
+      href: "/virtual-assistant",
       icon: <FaAmazon size={32} />,
       description: "Professional support and project management",
       color: "from-purple-500 to-violet-500",
     },
   ],
-  graphic: [
+  work: [
     {
       title: "Home",
       href: "/",
@@ -85,14 +77,14 @@ const navigationItems = {
       href: "/fullstack-development",
       icon: <FaCode size={32} />,
       description: "Modern web applications with React, Next.js, and Node.js",
-      color: "from-blue-500 to-cyan-500",
+      color: "from-pink-500 to-rose-500",
     },
     {
       title: "Graphic Design",
       href: "/graphic-design",
       icon: <FaPalette size={32} />,
       description: "Creative visual solutions and brand identity design",
-      color: "from-pink-500 to-rose-500",
+      color: "from-blue-500 to-cyan-500 ",
     },
     {
       title: "Mobile Development",
@@ -103,7 +95,7 @@ const navigationItems = {
     },
     {
       title: "Amazon Virtual Assistant",
-      href: "/virtual-analyst",
+      href: "/virtual-assistant",
       icon: <FaAmazon size={32} />,
       description: "Professional support and project management",
       color: "from-purple-500 to-violet-500",
@@ -238,7 +230,7 @@ const HamburgerIcon = ({
   const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const currentNavigationItems = navigationItems[variant];
-//   const accentColor = variant === "graphic" ? "#3ca0f2" : "blue-400";
+  //   const accentColor = variant === "graphic" ? "#3ca0f2" : "blue-400";
 
   // Close mobile menu when route changes
   useEffect(() => {
@@ -392,37 +384,29 @@ const HamburgerIcon = ({
     <>
       <motion.button
         onClick={toggleMenu}
-        className={`relative p-3 text-white transition-colors duration-300 z-[60] border border-white/20 rounded-lg ${className}`}
+        className={`relative p-3 text-white transition-colors duration-300 z-[60] ${className}`}
         aria-label="Toggle menu"
         aria-expanded={isMenuOpen}
         aria-controls="navigation-dialog"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
       >
-        <div className="w-6 h-6 flex flex-col justify-between">
-          <motion.span
+        <div className="w-52 h-w-52 flex items-center justify-center">
+          <motion.div
             animate={{
-              rotate: isMenuOpen ? 45 : 0,
-              y: isMenuOpen ? 8 : 0,
+              rotate: isMenuOpen ? 180 : 0,
+              scale: isMenuOpen ? 0.8 : 1,
             }}
             transition={{ duration: 0.3 }}
-            className="w-full h-0.5 bg-white origin-center"
-          />
-          <motion.span
-            animate={{
-              opacity: isMenuOpen ? 0 : 1,
-            }}
-            transition={{ duration: 0.3 }}
-            className="w-full h-0.5 bg-white"
-          />
-          <motion.span
-            animate={{
-              rotate: isMenuOpen ? -45 : 0,
-              y: isMenuOpen ? -8 : 0,
-            }}
-            transition={{ duration: 0.3 }}
-            className="w-full h-0.5 bg-white origin-center"
-          />
+          >
+            <Image
+              src="/icons/burger-menu.svg"
+              alt="Menu"
+              width={52}
+              height={52}
+              className="w-15 h-15"
+            />
+          </motion.div>
         </div>
       </motion.button>
 
@@ -496,7 +480,7 @@ const HamburgerIcon = ({
                         <span
                           className={cn(
                             "text-transparent bg-clip-text bg-gradient-to-r",
-                            variant === "graphic"
+                            variant === "work"
                               ? "from-[#3ca0f2] to-purple-500"
                               : "from-blue-400 to-purple-500"
                           )}
@@ -543,7 +527,7 @@ const HamburgerIcon = ({
                                 <h3
                                   className={cn(
                                     "text-xl md:text-2xl font-semibold text-white mb-2 transition-colors duration-300",
-                                    variant === "graphic"
+                                    variant === "work"
                                       ? "group-hover:text-[#3ca0f2]"
                                       : "group-hover:text-blue-400"
                                   )}
@@ -576,7 +560,7 @@ const HamburgerIcon = ({
                             }}
                             className={cn(
                               "absolute -inset-4 rounded-full blur-xl opacity-70",
-                              variant === "graphic"
+                              variant === "work"
                                 ? "bg-gradient-to-r from-[#3ca0f2]/30 to-purple-500/30"
                                 : "bg-gradient-to-r from-blue-500/30 to-purple-500/30"
                             )}
@@ -636,7 +620,7 @@ const HamburgerIcon = ({
                           onClick={() => handleNavigation("/")}
                           className={cn(
                             "px-8 py-4 text-white font-semibold rounded-full hover:shadow-lg transition-all duration-300",
-                            variant === "graphic"
+                            variant === "work"
                               ? "bg-gradient-to-r from-[#3ca0f2] to-purple-500"
                               : "bg-gradient-to-r from-blue-500 to-purple-600"
                           )}

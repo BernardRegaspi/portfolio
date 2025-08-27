@@ -49,7 +49,7 @@ const serviceLinks = [
   },
   {
     name: "Virtual Assistant",
-    href: "/virtual-analyst",
+    href: "/virtual-assistant",
     icon: <FaAmazon size={16} />,
   },
 ];

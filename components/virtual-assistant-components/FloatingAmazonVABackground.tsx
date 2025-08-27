@@ -17,51 +17,56 @@ const FloatingCodeBackground: React.FC = () => {
   const [dynamicElements, setDynamicElements] = useState<DynamicElement[]>([]);
 
   useEffect(() => {
-    const codeElements: string[] = [
-      "📐 InDesign",
-      "🌈 Sketch",
-      "🖼️ Lightroom",
-      "🔥 Procreate",
-      "📊 XD",
-      "🎭 CorelDRAW",
-      "🎨 Palette",
-      "✂️ Crop Tool",
-      "🔍 Zoom",
-      "📏 Ruler",
-      "🌟 Effects",
-      "📝 Typography",
-      "🔄 Transform",
-      "🔗 Layers",
-      "🎯 Alignment",
-      "🖱️ Selection",
-      "🎨 Color Picker",
-      "📋 Clipboard",
-      "🔍 Preview",
-      "📱 Mockup",
-      "🎪 Animation",
-      "🖼️ Vector",
-      "📊 Charts",
-      "🎨 Brand Kit",
-      "🔧 Adjustment",
-      "📐 Bezier",
-      "🌈 HSB",
-      "RGB()",
-      "CMYK",
-      "#HEX",
-      "opacity: 0.8",
-      "blend-mode",
-      "filter: blur",
-      "transform",
-      "box-shadow",
-      "linear-gradient",
-      "border-radius",
+    const amazonVAElements: string[] = [
+      "Product Research",
+      "Keyword Optimization",
+      "PPC Management",
+      "Inventory Analysis",
+      "Competitor Research",
+      "Listing Optimization",
+      "Amazon FBA",
+      "Seller Central",
+      "A9 Algorithm",
+      "BSR Tracking",
+      "Review Management",
+      "Brand Registry",
+      "Sponsored Products",
+      "Amazon DSP",
+      "Helium 10",
+      "Jungle Scout",
+      "AMZScout",
+      "Keepa",
+      "FBA Calculator",
+      "Product Sourcing",
+      "Supplier Management",
+      "Quality Control",
+      "Amazon Analytics",
+      "Sales Velocity",
+      "Conversion Rate",
+      "Click-Through Rate",
+      "ACoS Optimization",
+      "TACoS Analysis",
+      "Profit Margins",
+      "ROI Tracking",
+      "Market Research",
+      "Niche Analysis",
+      "Product Launch",
+      "Ranking Strategy",
+      "Customer Service",
+      "Return Management",
+      "Account Health",
+      "Performance Metrics",
+      "Sales Reports",
+      "Inventory Planning",
     ];
 
     const createFloatingElement = () => {
       const id = Date.now() + Math.random();
       const newElement: DynamicElement = {
         id,
-        text: codeElements[Math.floor(Math.random() * codeElements.length)],
+        text: amazonVAElements[
+          Math.floor(Math.random() * amazonVAElements.length)
+        ],
         left: Math.random() * 90 + 5,
         top: Math.random() * 90 + 5,
         fontSize: Math.random() * 8 + 12,
@@ -100,12 +105,12 @@ const FloatingCodeBackground: React.FC = () => {
 
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
-      {/* Static floating code elements */}
+      {/* Static floating Amazon VA elements */}
       <div
         className="absolute top-[10%] left-[10%] text-red-400 font-mono font-bold text-base opacity-70 animate-float-1"
         style={{ textShadow: "0 0 10px currentColor", animationDuration: "4s" }}
       >
-        🎨 Photoshop
+        Product Research
       </div>
 
       <div
@@ -116,7 +121,7 @@ const FloatingCodeBackground: React.FC = () => {
           animationDelay: "1s",
         }}
       >
-       🖌️ Figma
+        Amazon FBA
       </div>
 
       <div
@@ -127,7 +132,7 @@ const FloatingCodeBackground: React.FC = () => {
           animationDelay: "2s",
         }}
       >
-        🎯 Canva
+        PPC Management
       </div>
 
       <div
@@ -138,7 +143,7 @@ const FloatingCodeBackground: React.FC = () => {
           animationDelay: "0.5s",
         }}
       >
-        🖼️ Lightroom
+        Helium 10
       </div>
 
       <div
@@ -149,7 +154,7 @@ const FloatingCodeBackground: React.FC = () => {
           animationDelay: "1.5s",
         }}
       >
-        🎨 Brush
+        Listing Optimization
       </div>
 
       <div
@@ -160,7 +165,7 @@ const FloatingCodeBackground: React.FC = () => {
           animationDelay: "2.5s",
         }}
       >
-       🖊️ Pen Tool
+        Seller Central
       </div>
 
       <div
@@ -171,7 +176,7 @@ const FloatingCodeBackground: React.FC = () => {
           animationDelay: "3s",
         }}
       >
-        🎨 Gradient
+        BSR Tracking
       </div>
 
       <div
@@ -182,7 +187,7 @@ const FloatingCodeBackground: React.FC = () => {
           animationDelay: "1.2s",
         }}
       >
-       📐 Grid
+        Keyword Research
       </div>
 
       <div
@@ -193,7 +198,7 @@ const FloatingCodeBackground: React.FC = () => {
           animationDelay: "0.8s",
         }}
       >
-        💾 Export
+        ACoS Optimization
       </div>
 
       <div
@@ -204,7 +209,7 @@ const FloatingCodeBackground: React.FC = () => {
           animationDelay: "2.2s",
         }}
       >
-        ✨ Magic Wand
+        Jungle Scout
       </div>
 
       {/* Dynamic floating elements */}
@@ -267,8 +272,8 @@ const FloatingCodeBackground: React.FC = () => {
         }}
       />
 
-      {/* Add subtle glow effect */}
-      <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-blue-900/10 opacity-30"></div>
+      {/* Add subtle glow effect with purple theme */}
+      <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-purple-900/10 opacity-30"></div>
     </div>
   );
 };

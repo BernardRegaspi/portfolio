@@ -1,13 +1,12 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
-import HamburgerIcon from "../HamburgerIcon";
-import "../../app/styles/HomePage.css";
+import HamburgerIcon from "./HamburgerIcon";
+import "../app/styles/HomePage.css";
 
-const GraphicNavbar = () => {
+const NavbarWorks = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   // Handle scroll effect
@@ -37,7 +36,7 @@ const GraphicNavbar = () => {
           <div className="container mx-auto px-6">
             <div className="flex items-center justify-between h-20">
               {/* Logo */}
-              <Link href="/" className="flex items-center space-x-2 group">
+              <div className="flex items-center space-x-2 group">
                 <motion.div
                   className="relative"
                   whileHover={{ scale: 1.05 }}
@@ -50,11 +49,11 @@ const GraphicNavbar = () => {
                     <span className="text-2xl font-bold text-white">Dev</span>
                   </div>
                 </motion.div>
-              </Link>
+              </div>
 
               {/* Hamburger Menu with Full-Screen Overlay */}
               <HamburgerIcon
-                variant="graphic"
+                variant="work"
                 className="hover:text-[#3ca0f2]"
               />
             </div>
@@ -65,4 +64,4 @@ const GraphicNavbar = () => {
   );
 };
 
-export default GraphicNavbar;
+export default NavbarWorks;

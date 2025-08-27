@@ -17,51 +17,56 @@ const FloatingCodeBackground: React.FC = () => {
   const [dynamicElements, setDynamicElements] = useState<DynamicElement[]>([]);
 
   useEffect(() => {
-    const codeElements: string[] = [
-      "📐 InDesign",
-      "🌈 Sketch",
-      "🖼️ Lightroom",
-      "🔥 Procreate",
-      "📊 XD",
-      "🎭 CorelDRAW",
-      "🎨 Palette",
-      "✂️ Crop Tool",
-      "🔍 Zoom",
-      "📏 Ruler",
-      "🌟 Effects",
-      "📝 Typography",
-      "🔄 Transform",
-      "🔗 Layers",
-      "🎯 Alignment",
-      "🖱️ Selection",
-      "🎨 Color Picker",
-      "📋 Clipboard",
-      "🔍 Preview",
-      "📱 Mockup",
-      "🎪 Animation",
-      "🖼️ Vector",
-      "📊 Charts",
-      "🎨 Brand Kit",
-      "🔧 Adjustment",
-      "📐 Bezier",
-      "🌈 HSB",
-      "RGB()",
-      "CMYK",
-      "#HEX",
-      "opacity: 0.8",
-      "blend-mode",
-      "filter: blur",
-      "transform",
-      "box-shadow",
-      "linear-gradient",
-      "border-radius",
+    const mobileDevElements: string[] = [
+      "React Native",
+      "Flutter",
+      "Kotlin",
+      "Swift",
+      "Expo",
+      "Android Studio",
+      "Xcode",
+      "App Store",
+      "Google Play",
+      "iOS Development",
+      "Android Development",
+      "Cross-Platform",
+      "Native Components",
+      "API Integration",
+      "Push Notifications",
+      "App Performance",
+      "UI/UX Design",
+      "Material Design",
+      "Human Interface",
+      "Navigation",
+      "State Management",
+      "Redux Toolkit",
+      "MobX",
+      "SQLite",
+      "Firebase",
+      "Realm Database",
+      "Async Storage",
+      "Biometric Auth",
+      "Camera API",
+      "Location Services",
+      "Maps Integration",
+      "In-App Purchases",
+      "App Analytics",
+      "Crash Reporting",
+      "Testing",
+      "Debugging",
+      "App Deployment",
+      "CI/CD Pipeline",
+      "Code Signing",
+      "App Optimization",
     ];
 
     const createFloatingElement = () => {
       const id = Date.now() + Math.random();
       const newElement: DynamicElement = {
         id,
-        text: codeElements[Math.floor(Math.random() * codeElements.length)],
+        text: mobileDevElements[
+          Math.floor(Math.random() * mobileDevElements.length)
+        ],
         left: Math.random() * 90 + 5,
         top: Math.random() * 90 + 5,
         fontSize: Math.random() * 8 + 12,
@@ -100,12 +105,12 @@ const FloatingCodeBackground: React.FC = () => {
 
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
-      {/* Static floating code elements */}
+      {/* Static floating Mobile Dev elements */}
       <div
         className="absolute top-[10%] left-[10%] text-red-400 font-mono font-bold text-base opacity-70 animate-float-1"
         style={{ textShadow: "0 0 10px currentColor", animationDuration: "4s" }}
       >
-        🎨 Photoshop
+        React Native
       </div>
 
       <div
@@ -116,7 +121,7 @@ const FloatingCodeBackground: React.FC = () => {
           animationDelay: "1s",
         }}
       >
-       🖌️ Figma
+        Flutter
       </div>
 
       <div
@@ -127,7 +132,7 @@ const FloatingCodeBackground: React.FC = () => {
           animationDelay: "2s",
         }}
       >
-        🎯 Canva
+        Android Studio
       </div>
 
       <div
@@ -138,7 +143,7 @@ const FloatingCodeBackground: React.FC = () => {
           animationDelay: "0.5s",
         }}
       >
-        🖼️ Lightroom
+        Kotlin
       </div>
 
       <div
@@ -149,7 +154,7 @@ const FloatingCodeBackground: React.FC = () => {
           animationDelay: "1.5s",
         }}
       >
-        🎨 Brush
+        Firebase
       </div>
 
       <div
@@ -160,7 +165,7 @@ const FloatingCodeBackground: React.FC = () => {
           animationDelay: "2.5s",
         }}
       >
-       🖊️ Pen Tool
+        Swift
       </div>
 
       <div
@@ -171,7 +176,7 @@ const FloatingCodeBackground: React.FC = () => {
           animationDelay: "3s",
         }}
       >
-        🎨 Gradient
+        App Store
       </div>
 
       <div
@@ -182,7 +187,7 @@ const FloatingCodeBackground: React.FC = () => {
           animationDelay: "1.2s",
         }}
       >
-       📐 Grid
+        Cross-Platform
       </div>
 
       <div
@@ -193,7 +198,7 @@ const FloatingCodeBackground: React.FC = () => {
           animationDelay: "0.8s",
         }}
       >
-        💾 Export
+        Push Notifications
       </div>
 
       <div
@@ -204,7 +209,7 @@ const FloatingCodeBackground: React.FC = () => {
           animationDelay: "2.2s",
         }}
       >
-        ✨ Magic Wand
+        Xcode
       </div>
 
       {/* Dynamic floating elements */}
@@ -267,8 +272,8 @@ const FloatingCodeBackground: React.FC = () => {
         }}
       />
 
-      {/* Add subtle glow effect */}
-      <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-blue-900/10 opacity-30"></div>
+      {/* Add subtle glow effect with green theme */}
+      <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-green-900/10 opacity-30"></div>
     </div>
   );
 };

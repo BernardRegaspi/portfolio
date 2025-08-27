@@ -172,7 +172,7 @@ const HomePage = () => {
               Mobile Development
             </Link>
             <Link
-              href="/virtual-analyst"
+              href="/virtual-assistant"
               className="skill-btn virtual-assistant"
               onClick={handleTransition}
             >
