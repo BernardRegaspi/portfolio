@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
-import "../../app/styles/GraphicDesign.css";
 
 interface MyWorksProps {
   onClose?: () => void;

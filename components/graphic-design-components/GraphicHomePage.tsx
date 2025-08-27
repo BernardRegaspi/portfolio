@@ -5,7 +5,6 @@ import { useState, useEffect } from "react";
 import FloatingDesignToolsBackground from "./FloatingDesignToolsBackground";
 import { cn } from "@/lib/utils";
 import "../../app/styles/HomePage.css";
-import "../../app/styles/GraphicDesign.css";
 
 // Interface for floating particles (white dots)
 interface Particle {
