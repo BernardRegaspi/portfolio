@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import FloatingCodeBackground from "./FloatingMobileCodeBackground";
-import { cn } from "@/lib/utils";
 import "../../app/styles/HomePage.css";
 
 // Interface for floating particles (white dots)
@@ -77,12 +76,7 @@ const MobileDevHomePage = () => {
           </p>
         )}
 
-        <div
-          className={cn(
-            "max-w-2xl space-y-4",
-            showText ? "animate-fade-in-up animation-delay-600" : "opacity-0"
-          )}
-        >
+        <div className="max-w-2xl space-y-4">
           <p className="text-xl md:text-2xl text-white/90 leading-relaxed text-shadow">
             I craft native and cross-platform mobile applications that deliver
             exceptional user experiences. Specializing in Android, iOS, React

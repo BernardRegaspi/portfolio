@@ -71,7 +71,7 @@ const MyCertificates: React.FC<CertificatesPreviewProps> = ({
           animate="visible"
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12"
         >
-          {displayCertificates.map((certificate) => (
+          {displayCertificates.map((certificate, index) => (
             <motion.div
               key={certificate.id}
               variants={itemVariants}
@@ -84,7 +84,9 @@ const MyCertificates: React.FC<CertificatesPreviewProps> = ({
                   src={certificate.imageUrl}
                   alt={certificate.title}
                   fill
-                  loading="lazy"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  priority={index < 3}
+                  loading={index < 3 ? undefined : "lazy"}
                   quality={75}
                 />
                 <div className="absolute top-4 right-4 bg-black bg-opacity-30 px-2 py-1 rounded-full">
@@ -166,6 +168,7 @@ const MyCertificates: React.FC<CertificatesPreviewProps> = ({
                     src={selectedImage}
                     alt="Certificate Full View"
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 80vw"
                     style={{ objectFit: "contain" }}
                     quality={100}
                     priority

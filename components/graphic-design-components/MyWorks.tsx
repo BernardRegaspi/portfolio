@@ -232,7 +232,7 @@ const MyWorks: React.FC<MyWorksProps> = ({ onClose }) => {
             <div className="relative">
               {/* Main Image Display - Made Bigger */}
               <div className="relative mb-8">
-                <div className="gallery-container relative aspect-[4/3] md:aspect-[16/9] rounded-3xl overflow-hidden w-full">
+                <div className="bg-white/5 backdrop-blur-2xl border border-white/10 relative aspect-[4/3] md:aspect-[16/9] rounded-3xl overflow-hidden w-full">
                   {isImageLoading && (
                     <div className="absolute inset-0 flex items-center justify-center z-10">
                       <div className="w-12 h-12 border-4 border-[#3ca0f2] border-t-transparent rounded-full animate-spin"></div>
@@ -266,7 +266,7 @@ const MyWorks: React.FC<MyWorksProps> = ({ onClose }) => {
                           onClick={() => handleDotClick(index)}
                           disabled={isTransitioning}
                           className={cn(
-                            "gallery-pagination-dot w-4 h-4 rounded-full transition-all duration-300 disabled:cursor-not-allowed backdrop-blur-sm",
+                            "w-4 h-4 rounded-full transition-all duration-300 disabled:cursor-not-allowed backdrop-blur-sm ease-in-out  shadow-[0_3px_6px_rgba(0,0,0,0.2)] border-2 border-transparent hover:scale-130 hover:border-white/30 active:shadow-[0_0_20px_rgba(168,85,247,0.6)] active:border-white/50 disabled:opacity-50",
                             index === currentImageIndex
                               ? "bg-[#3ca0f2] scale-125 active shadow-lg"
                               : "bg-white/40 hover:bg-white/60 border-2 border-white/20"
@@ -283,7 +283,7 @@ const MyWorks: React.FC<MyWorksProps> = ({ onClose }) => {
                     <button
                       onClick={handlePrevious}
                       disabled={isTransitioning}
-                      className="gallery-nav-button absolute left-4 top-1/2 p-4 text-white rounded-full transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="bg-black/50 hover:bg-black/70 hover:scale-110 hover:shadow-[0_5px_15px_rgba(0,0,0,0.4)] backdrop-blur-md border border-white/20 ease-in-out absolute left-4 top-1/2 p-4 text-white rounded-full transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       <svg
                         className="w-8 h-8"
@@ -302,7 +302,7 @@ const MyWorks: React.FC<MyWorksProps> = ({ onClose }) => {
                     <button
                       onClick={handleNext}
                       disabled={isTransitioning}
-                      className="gallery-nav-button absolute right-4 top-1/2 p-4 text-white rounded-full transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="bg-black/50 hover:bg-black/70 hover:scale-110 hover:shadow-[0_5px_15px_rgba(0,0,0,0.4)] backdrop-blur-md border border-white/20 ease-in-out absolute right-4 top-1/2 p-4 text-white rounded-full transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       <svg
                         className="w-8 h-8"

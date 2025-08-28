@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import FloatingCodeBackground from "./FloatingAmazonVABackground";
-import { cn } from "@/lib/utils";
 
 // Interface for floating particles (white dots)
 interface Particle {
@@ -15,12 +14,9 @@ interface Particle {
 }
 
 const VirtualAssistantHomePage = () => {
-  const [showText, setShowText] = useState(true);
   const [particles, setParticles] = useState<Particle[]>([]);
 
   useEffect(() => {
-    // Set showText to true immediately
-    setShowText(true);
 
     // Create animated particles (white dots like HomePage)
     const createParticles = () => {
@@ -69,18 +65,13 @@ const VirtualAssistantHomePage = () => {
       </div>
 
       <div className="flex-1 flex flex-col justify-center items-start p-8 md:p-16 space-y-6 relative z-[2]">
-        {showText && (
           <p className="text-4xl md:text-5xl lg:text-6xl text-gray-300 mb-4 font-bold">
             Virtual <span className="text-[#8d69f8] font-bold">Assistant</span>
             <span className="ml-2 animate-bounce">🎧</span>
           </p>
-        )}
 
         <div
-          className={cn(
-            "max-w-2xl space-y-4",
-            showText ? "animate-fade-in-up animation-delay-600" : "opacity-0"
-          )}
+          className="max-w-2xl space-y-4"
         >
           <p className="text-xl md:text-2xl text-white/90 leading-relaxed text-shadow">
             I help Amazon sellers optimize their business operations and
@@ -98,7 +89,6 @@ const VirtualAssistantHomePage = () => {
 
       <div className="flex-1 flex justify-center items-center p-8 relative z-[2]">
         <FloatingCodeBackground />
-        {showText && (
           <div className="relative z-10 animate-fade-in-up animation-delay-300">
             {/* Amazon VA-themed Speech Bubble */}
             <div className="absolute -top-24 left-1/2 transform -translate-x-1/2 bg-white/90 px-8 py-4 rounded-3xl shadow-xl z-20 backdrop-blur-sm border border-white/20 hover:scale-105 transition-transform duration-300">
@@ -113,7 +103,7 @@ const VirtualAssistantHomePage = () => {
               <div className="absolute -inset-1 bg-[#8d69f8]/30 rounded-full blur-xl opacity-70 animate-pulse"></div>
               <div className="relative rounded-full overflow-hidden border-4 border-white/10 shadow-2xl transition-transform hover:scale-105 duration-500">
                 <Image
-                  src="/images/profile4.png"
+                  src="/images/profile6.png"
                   alt="Amazon Virtual Assistant Profile"
                   width={500}
                   height={500}
@@ -124,7 +114,6 @@ const VirtualAssistantHomePage = () => {
               </div>
             </div>
           </div>
-        )}
       </div>
     </section>
   );

@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import FloatingDesignToolsBackground from "./FloatingDesignToolsBackground";
-import { cn } from "@/lib/utils";
 import "../../app/styles/HomePage.css";
 
 // Interface for floating particles (white dots)
@@ -72,18 +71,12 @@ const GraphicHomePage = () => {
       <div className="flex-1 flex flex-col justify-center items-start p-8 md:p-16 space-y-6 relative z-[2]">
         {showText && (
           <p className="text-4xl md:text-5xl lg:text-6xl text-gray-300 mb-4 font-bold">
-            Graphic{" "}
-            <span className="text-[#3ca0f2] font-bold">Designer</span>
+            Graphic <span className="text-[#3ca0f2] font-bold">Designer</span>
             <span className="ml-2 animate-bounce">🎨</span>
           </p>
         )}
 
-        <div
-          className={cn(
-            "max-w-2xl space-y-4",
-            showText ? "animate-fade-in-up animation-delay-600" : "opacity-0"
-          )}
-        >
+        <div className="max-w-2xl space-y-4">
           <p className="text-xl md:text-2xl text-white/90 leading-relaxed text-shadow">
             I specialize in creating visually compelling designs that
             communicate your brand&apos;s story. From logos and brand identity

@@ -40,14 +40,14 @@ const navigationItems = {
       href: "/fullstack-development",
       icon: <FaCode size={32} />,
       description: "Modern web applications with React, Next.js, and Node.js",
-      color: "from-blue-500 to-cyan-500",
+      color: "from-pink-500 to-rose-500",
     },
     {
       title: "Graphic Design",
       href: "/graphic-design",
       icon: <FaPalette size={32} />,
       description: "Creative visual solutions and brand identity design",
-      color: "from-pink-500 to-rose-500",
+      color: "from-blue-500 to-cyan-500",
     },
     {
       title: "Mobile Development",
