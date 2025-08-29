@@ -164,9 +164,8 @@ const Footer = () => {
             <div className="mb-6">
               <h3 className="text-2xl font-bold text-white mb-4">
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
-                  Bernard
+                  {"< Bernard />"}
                 </span>
-                <span className="text-white"> Dev</span>
               </h3>
               <p className="text-white/80 leading-relaxed mb-6">
                 Full Stack Developer & Creative Technologist. Transforming ideas
@@ -217,7 +216,7 @@ const Footer = () => {
                 <li key={index}>
                   <button
                     onClick={() => scrollToSection(link.href.replace("#", ""))}
-                    className="text-white/80 hover:text-white hover:translate-x-2 transition-all duration-300 flex items-center gap-2 group w-full text-left"
+                    className="text-base text-white/80 hover:text-white hover:translate-x-2 transition-all duration-300 flex items-center gap-2 group w-full text-left"
                   >
                     <span className="w-0 group-hover:w-2 h-0.5 bg-gradient-to-r from-blue-400 to-purple-500 transition-all duration-300"></span>
                     {link.name}
@@ -236,7 +235,7 @@ const Footer = () => {
                   <Link
                     href={service.href}
                     onClick={handleTransition}
-                    className="text-white/80 hover:text-white hover:translate-x-2 transition-all duration-300 flex items-center gap-3 group"
+                    className="text-base text-white/80 hover:text-white hover:translate-x-2 transition-all duration-300 flex items-center gap-3 group"
                   >
                     <span className="text-white/60 group-hover:text-white transition-colors duration-300">
                       {service.icon}
@@ -263,7 +262,7 @@ const Footer = () => {
                   <p className="text-white/60 text-sm">Email</p>
                   <a
                     href="mailto:bernard.regaspi.pixel8@gmail.com"
-                    className="text-white/80 hover:text-white transition-colors duration-300 text-sm"
+                    className="text-white/80 hover:text-white transition-colors duration-300 text-sm break-all"
                   >
                     bernard.regaspi.pixel8@gmail.com
                   </a>
@@ -303,13 +302,15 @@ const Footer = () => {
         {/* Bottom Section */}
         <div className="mt-16 pt-8 border-t border-white/10">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <div className="flex items-center gap-2 text-white/80">
-              <span>© {currentYear} Bernard Dev. Made with</span>
+            <div className="flex items-center gap-2 text-white/80 text-base text-center md:text-left">
+              <span>
+                © {currentYear} {"< Bernard />"}. Made with
+              </span>
               <FaHeart className="text-red-500 animate-pulse" size={16} />
               <span>and lots of coffee.</span>
             </div>
 
-            <div className="flex flex-wrap gap-6 text-sm text-white/60">
+            <div className="flex flex-wrap gap-6 text-sm text-white/60 justify-center md:justify-end">
               <span className="hover:text-white transition-colors duration-300 cursor-pointer">
                 Privacy Policy
               </span>

@@ -9,7 +9,16 @@
 @keyframes float {
   0%,
   100% {
-    transform: translateY(0px) rotate(0deg);
+    tra/* Mobile spacing utilities for different iPhone models */
+.mobile-safe-spacing {
+      margin-top: max(env(safe-area-inset-top), 3rem);
+    }
+
+    @media (max-width: 640px) {
+      .mobile-safe-spacing {
+        margin-top: max(env(safe-area-inset-top), 4rem);
+      }
+    }
     opacity: 0.7;
   }
   50% {

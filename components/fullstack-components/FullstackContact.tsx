@@ -15,6 +15,7 @@ import {
   FaMobile,
 } from "react-icons/fa";
 import "../../app/styles/HomePage.css";
+import emailjs from "@emailjs/browser";
 
 // Contact form interface
 interface ContactForm {
@@ -143,9 +144,21 @@ const FullstackContact = () => {
     setIsSubmitting(true);
     setSubmitStatus("");
 
-    // Simulate form submission
     try {
-      await new Promise((resolve) => setTimeout(resolve, 2000));
+      // Using sendEmail method with template parameters
+      await emailjs.send(
+        "service_3q79ey8", // Your service ID
+        "template_6boqaee", // Your template ID
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          to_name: "Bernard", // Your name
+          project_type: "Fullstack Development", // Additional context
+        },
+        "KAHMMRSws4oNcz19y" // Your public key
+      );
       setSubmitStatus(
         "Message sent successfully! I'll get back to you soon to discuss your project requirements."
       );
@@ -155,7 +168,8 @@ const FullstackContact = () => {
         subject: "Fullstack Development Project",
         message: "",
       });
-    } catch {
+    } catch (error) {
+      console.error("EmailJS Error:", error);
       setSubmitStatus("Something went wrong. Please try again.");
     } finally {
       setIsSubmitting(false);

@@ -38,28 +38,28 @@ const navigationItems = {
     {
       title: "Full Stack Development",
       href: "/fullstack-development",
-      icon: <FaCode size={32} />,
+      icon: <FaCode />,
       description: "Modern web applications with React, Next.js, and Node.js",
       color: "from-pink-500 to-rose-500",
     },
     {
       title: "Graphic Design",
       href: "/graphic-design",
-      icon: <FaPalette size={32} />,
+      icon: <FaPalette />,
       description: "Creative visual solutions and brand identity design",
       color: "from-blue-500 to-cyan-500",
     },
     {
       title: "Mobile Development",
       href: "/mobile-development",
-      icon: <FaMobile size={32} />,
+      icon: <FaMobile />,
       description: "Cross-platform mobile apps with React Native",
       color: "from-green-500 to-emerald-500",
     },
     {
       title: "Amazon Virtual Assistant",
       href: "/virtual-assistant",
-      icon: <FaAmazon size={32} />,
+      icon: <FaAmazon />,
       description: "Professional support and project management",
       color: "from-purple-500 to-violet-500",
     },
@@ -68,35 +68,35 @@ const navigationItems = {
     {
       title: "Home",
       href: "/",
-      icon: <FaHome size={32} />,
+      icon: <FaHome />,
       description: "Back to the main portfolio homepage",
       color: "from-gray-500 to-gray-600",
     },
     {
       title: "Full Stack Development",
       href: "/fullstack-development",
-      icon: <FaCode size={32} />,
+      icon: <FaCode />,
       description: "Modern web applications with React, Next.js, and Node.js",
       color: "from-pink-500 to-rose-500",
     },
     {
       title: "Graphic Design",
       href: "/graphic-design",
-      icon: <FaPalette size={32} />,
+      icon: <FaPalette />,
       description: "Creative visual solutions and brand identity design",
       color: "from-blue-500 to-cyan-500 ",
     },
     {
       title: "Mobile Development",
       href: "/mobile-development",
-      icon: <FaMobile size={32} />,
+      icon: <FaMobile />,
       description: "Cross-platform mobile apps with React Native",
       color: "from-green-500 to-emerald-500",
     },
     {
       title: "Amazon Virtual Assistant",
       href: "/virtual-assistant",
-      icon: <FaAmazon size={32} />,
+      icon: <FaAmazon />,
       description: "Professional support and project management",
       color: "from-purple-500 to-violet-500",
     },
@@ -108,31 +108,31 @@ const socialLinks: SocialLink[] = [
   {
     name: "GitHub",
     href: "https://github.com/BernardRegaspi",
-    icon: <FaGithub size={24} />,
+    icon: <FaGithub />,
     color: "hover:text-gray-400",
   },
   {
     name: "LinkedIn",
     href: "https://www.linkedin.com/in/bernard-brennan-regaspi-378b1927b/",
-    icon: <FaLinkedin size={24} />,
+    icon: <FaLinkedin />,
     color: "hover:text-blue-400",
   },
   {
     name: "Email",
     href: "mailto:bernardbrennan.regaspi@gmail.com",
-    icon: <FaEnvelope size={24} />,
+    icon: <FaEnvelope />,
     color: "hover:text-red-400",
   },
   {
     name: "Twitter",
     href: "#",
-    icon: <FaTwitter size={24} />,
+    icon: <FaTwitter />,
     color: "hover:text-sky-400",
   },
   {
     name: "Instagram",
     href: "#",
-    icon: <FaInstagram size={24} />,
+    icon: <FaInstagram />,
     color: "hover:text-pink-400",
   },
 ];
@@ -384,14 +384,18 @@ const HamburgerIcon = ({
     <>
       <motion.button
         onClick={toggleMenu}
-        className={`relative p-3 text-white transition-colors duration-300 z-[60] ${className}`}
+        className={`p-2 sm:p-3 md:p-4 text-white transition-colors duration-300 z-[70] ${className}`}
         aria-label="Toggle menu"
         aria-expanded={isMenuOpen}
         aria-controls="navigation-dialog"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
+        style={{
+          marginTop: "env(safe-area-inset-top, 0)",
+          marginRight: "env(safe-area-inset-right, 0)",
+        }}
       >
-        <div className="w-52 h-w-52 flex items-center justify-center">
+        <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 flex items-center justify-center min-w-[48px] min-h-[48px] lg:hover:border-white/20 transition-all duration-300">
           <motion.div
             animate={{
               rotate: isMenuOpen ? 180 : 0,
@@ -404,7 +408,7 @@ const HamburgerIcon = ({
               alt="Menu"
               width={52}
               height={52}
-              className="w-15 h-15"
+              className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10"
             />
           </motion.div>
         </div>
@@ -414,7 +418,7 @@ const HamburgerIcon = ({
       <dialog
         ref={dialogRef}
         id="navigation-dialog"
-        className="backdrop:bg-gradient-to-br backdrop:from-[#0f0f23]/95 backdrop:via-[#1a1a2e]/95 backdrop:to-[#16213e]/95 backdrop:backdrop-blur-xl bg-transparent border-none outline-none w-full h-full p-0 overflow-hidden"
+        className="backdrop:bg-gradient-to-br backdrop:from-[#0f0f23]/95 backdrop:via-[#1a1a2e]/95 backdrop:to-[#16213e]/95 backdrop:backdrop-blur-xl bg-transparent border-none outline-none w-full h-full scrollbar-show p-0 overflow-hidden"
         style={{
           position: "fixed",
           inset: "0",
@@ -449,12 +453,17 @@ const HamburgerIcon = ({
                 animate={{ opacity: 1, rotate: 0 }}
                 exit={{ opacity: 0, rotate: 90 }}
                 onClick={handleCloseWithAnimation}
-                className="absolute top-6 right-6 z-20 p-3 text-white/70 hover:text-white hover:bg-white/10 rounded-full transition-all duration-200"
+                className="absolute top-4 right-4 sm:top-6 sm:right-6 md:top-8 md:right-8 z-[80] p-2 sm:p-3 md:p-4 text-white/70 hover:text-white bg-black/20 backdrop-blur-sm hover:bg-black/30 rounded-full border border-white/10 hover:border-white/20 transition-all duration-200"
                 aria-label="Close menu"
+                style={{
+                  marginTop: "env(safe-area-inset-top, 0)",
+                  marginRight: "env(safe-area-inset-right, 0)",
+                }}
               >
                 <svg
-                  width="28"
-                  height="28"
+                  width="20"
+                  height="20"
+                  className="sm:w-6 sm:h-6 md:w-7 md:h-7"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
@@ -467,14 +476,14 @@ const HamburgerIcon = ({
                 </svg>
               </motion.button>
               {/* Menu Content */}
-              <div className="w-full h-full px-6 py-12 flex items-center justify-center overflow-y-auto">
+              <div className="w-full h-full px-4 py-8 sm:px-6 sm:py-10 md:px-8 md:py-12 lg:pt-20 xl:pt-24 safe-top safe-bottom flex items-center justify-center overflow-y-auto">
                 <div className="w-full max-w-7xl mx-auto">
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 min-h-[80vh] items-center">
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 min-h-[calc(100vh-6rem)] sm:min-h-[calc(100vh-8rem)] lg:min-h-[calc(100vh-10rem)] items-center">
                     {/* Navigation Section */}
-                    <div className="flex flex-col justify-center py-8 lg:py-0">
+                    <div className="flex flex-col justify-center py-2 sm:py-4 md:py-8 lg:py-0 order-2 lg:order-1">
                       <motion.h2
                         variants={itemVariants}
-                        className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-8 text-center lg:text-left"
+                        className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-4 sm:mb-6 md:mb-8 text-center lg:text-left"
                       >
                         What do you{" "}
                         <span
@@ -490,7 +499,7 @@ const HamburgerIcon = ({
                       </motion.h2>
 
                       <motion.div
-                        className="space-y-6"
+                        className="space-y-3 sm:space-y-4 md:space-y-6"
                         variants={{
                           visible: {
                             transition: {
@@ -514,19 +523,21 @@ const HamburgerIcon = ({
                             className="group cursor-pointer"
                             onClick={() => handleNavigation(item.href)}
                           >
-                            <div className="flex items-center p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-300">
+                            <div className="flex items-center p-3 sm:p-4 md:p-6 rounded-lg sm:rounded-xl md:rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-300">
                               <div
                                 className={cn(
-                                  "flex items-center justify-center w-16 h-16 rounded-xl bg-gradient-to-r mr-6 group-hover:scale-110 transition-transform duration-300",
+                                  "flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 rounded-md sm:rounded-lg md:rounded-xl bg-gradient-to-r mr-3 sm:mr-4 md:mr-6 group-hover:scale-110 transition-transform duration-300",
                                   item.color
                                 )}
                               >
-                                <div className="text-white">{item.icon}</div>
+                                <div className="text-white text-base sm:text-lg md:text-2xl">
+                                  {item.icon}
+                                </div>
                               </div>
-                              <div className="flex-1">
+                              <div className="flex-1 min-w-0">
                                 <h3
                                   className={cn(
-                                    "text-xl md:text-2xl font-semibold text-white mb-2 transition-colors duration-300",
+                                    "text-base sm:text-lg md:text-xl lg:text-2xl font-semibold text-white mb-0.5 sm:mb-1 md:mb-2 transition-colors duration-300 truncate",
                                     variant === "work"
                                       ? "group-hover:text-[#3ca0f2]"
                                       : "group-hover:text-blue-400"
@@ -534,7 +545,7 @@ const HamburgerIcon = ({
                                 >
                                   {item.title}
                                 </h3>
-                                <p className="text-gray-400 text-sm md:text-base">
+                                <p className="text-gray-400 text-xs sm:text-sm md:text-base line-clamp-2 sm:line-clamp-none leading-tight">
                                   {item.description}
                                 </p>
                               </div>
@@ -545,9 +556,12 @@ const HamburgerIcon = ({
                     </div>
 
                     {/* Profile & Social Section */}
-                    <div className="flex flex-col justify-center items-center text-center lg:text-left py-8 lg:py-0">
-                      <motion.div variants={itemVariants} className="mb-8">
-                        <div className="relative">
+                    <div className="flex flex-col justify-center items-center text-center lg:text-left py-2 sm:py-4 md:py-8 lg:py-0 order-1 lg:order-2">
+                      <motion.div
+                        variants={itemVariants}
+                        className="mb-4 sm:mb-6 md:mb-8"
+                      >
+                        <div className="relative mt-10">
                           <motion.div
                             animate={{
                               scale: [1, 1.1, 1],
@@ -559,29 +573,33 @@ const HamburgerIcon = ({
                               ease: "easeInOut",
                             }}
                             className={cn(
-                              "absolute -inset-4 rounded-full blur-xl opacity-70",
+                              "absolute -inset-2 sm:-inset-3 md:-inset-4 lg:-inset-6 rounded-full blur-xl opacity-70",
                               variant === "work"
                                 ? "bg-gradient-to-r from-[#3ca0f2]/30 to-purple-500/30"
                                 : "bg-gradient-to-r from-blue-500/30 to-purple-500/30"
                             )}
                           />
-                          <div className="relative w-80 h-80 mx-auto rounded-full overflow-hidden border-4 border-white/20">
+                          <div className="relative w-36 h-36 sm:w-44 sm:h-44 md:w-56 md:h-56 lg:w-72 lg:h-72 xl:w-80 xl:h-80 mx-auto rounded-full overflow-hidden border-2 border-white/20 sm:border-3 md:border-4 shadow-2xl">
                             <Image
                               src="/images/profile3.png"
                               alt="Bernard - Creative Professional"
                               className="w-full h-full object-cover"
                               width={320}
                               height={320}
+                              priority
                             />
                           </div>
                         </div>
                       </motion.div>
 
-                      <motion.div variants={itemVariants} className="mb-8">
-                        <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                      <motion.div
+                        variants={itemVariants}
+                        className="mb-4 sm:mb-6 md:mb-8"
+                      >
+                        <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-2 sm:mb-3 md:mb-4">
                           Bernard Brennan Regaspi
                         </h3>
-                        <p className="text-gray-300 text-lg mb-6 max-w-md">
+                        <p className="text-gray-300 text-sm sm:text-base md:text-lg lg:text-xl mb-4 sm:mb-6 md:mb-8 max-w-sm sm:max-w-md md:max-w-lg px-2 sm:px-4 md:px-0 leading-relaxed">
                           Creative Professional specializing in Full-Stack
                           Development, Graphic Design, and Digital Solutions
                         </p>
@@ -590,7 +608,7 @@ const HamburgerIcon = ({
                       {/* Social Links */}
                       <motion.div
                         variants={itemVariants}
-                        className="flex flex-wrap justify-center gap-4"
+                        className="flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-5 mb-6 sm:mb-8 md:mb-10"
                       >
                         {socialLinks.map((social, index) => (
                           <motion.a
@@ -602,24 +620,29 @@ const HamburgerIcon = ({
                             whileHover={{ scale: 1.2, y: -5 }}
                             whileTap={{ scale: 0.9 }}
                             className={cn(
-                              "flex items-center justify-center w-12 h-12 rounded-full bg-white/10 border border-white/20 text-white transition-all duration-300",
+                              "flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full bg-white/10 border border-white/20 text-white transition-all duration-300 shadow-lg hover:shadow-xl",
                               social.color
                             )}
                             title={social.name}
                           >
-                            {social.icon}
+                            <div className="text-sm sm:text-base md:text-lg">
+                              {social.icon}
+                            </div>
                           </motion.a>
                         ))}
                       </motion.div>
 
                       {/* Contact CTA */}
-                      <motion.div variants={itemVariants} className="mt-8">
+                      <motion.div
+                        variants={itemVariants}
+                        className="mt-4 sm:mt-6 md:mt-8"
+                      >
                         <motion.button
                           whileHover={{ scale: 1.05 }}
                           whileTap={{ scale: 0.95 }}
                           onClick={() => handleNavigation("/")}
                           className={cn(
-                            "px-8 py-4 text-white font-semibold rounded-full hover:shadow-lg transition-all duration-300",
+                            "px-6 py-3 sm:px-8 sm:py-4 md:px-10 md:py-5 text-sm sm:text-base md:text-lg text-white font-semibold rounded-full hover:shadow-lg transition-all duration-300 shadow-md",
                             variant === "work"
                               ? "bg-gradient-to-r from-[#3ca0f2] to-purple-500"
                               : "bg-gradient-to-r from-blue-500 to-purple-600"
