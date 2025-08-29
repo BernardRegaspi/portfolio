@@ -3,15 +3,11 @@
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import {
-  FaBars,
-  FaTimes,
   FaHome,
   FaTools,
   FaCertificate,
   FaBriefcase,
   FaEnvelope,
-  FaGithub,
-  FaLinkedin,
 } from "react-icons/fa";
 import HamburgerIcon from "./HamburgerIcon";
 import "../app/styles/HomePage.css";

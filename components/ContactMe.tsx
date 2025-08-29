@@ -8,7 +8,6 @@ import {
   FaEnvelope,
   FaPhone,
   FaMapMarkerAlt,
-  FaPaperPlane,
   FaFacebook,
 } from "react-icons/fa";
 import "../app/styles/HomePage.css";
