@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { cn } from "@/lib/utils";
 import {
   FaEnvelope,
@@ -88,16 +88,7 @@ const developmentServices = [
   },
 ];
 
-interface Particle {
-  id: number;
-  left: number;
-  top: number;
-  animationDelay: number;
-  animationDuration: number;
-}
-
 const FullstackContact = () => {
-  const [particles, setParticles] = useState<Particle[]>([]);
   const [formData, setFormData] = useState<ContactForm>({
     name: "",
     email: "",
@@ -106,28 +97,6 @@ const FullstackContact = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<string>("");
-
-  useEffect(() => {
-    // Create animated particles
-    const createParticles = () => {
-      const particleCount = 50;
-      const newParticles: Particle[] = [];
-
-      for (let i = 0; i < particleCount; i++) {
-        newParticles.push({
-          id: i,
-          left: Math.random() * 100,
-          top: Math.random() * 100,
-          animationDelay: Math.random() * 8,
-          animationDuration: Math.random() * 4 + 4,
-        });
-      }
-
-      setParticles(newParticles);
-    };
-
-    createParticles();
-  }, []);
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -196,23 +165,6 @@ const FullstackContact = () => {
             backgroundSize: "40px 40px",
           }}
         />
-      </div>
-
-      {/* Animated particles - more tech-like */}
-      <div className="fixed top-0 left-0 w-full h-full pointer-events-none z-[1]">
-        {particles.map((particle) => (
-          <div
-            key={particle.id}
-            className="absolute w-1 h-1 bg-[#f76360]/40 rounded-full"
-            style={{
-              left: `${particle.left}%`,
-              top: `${particle.top}%`,
-              animationDelay: `${particle.animationDelay}s`,
-              animationDuration: `${particle.animationDuration}s`,
-              animation: "float 8s ease-in-out infinite",
-            }}
-          />
-        ))}
       </div>
 
       {/* Main content */}

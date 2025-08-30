@@ -418,7 +418,7 @@ const HamburgerIcon = ({
       <dialog
         ref={dialogRef}
         id="navigation-dialog"
-        className="backdrop:bg-gradient-to-br backdrop:from-[#0f0f23]/95 backdrop:via-[#1a1a2e]/95 backdrop:to-[#16213e]/95 backdrop:backdrop-blur-xl bg-transparent border-none outline-none w-full h-full scrollbar-show p-0 overflow-hidden"
+        className="backdrop:bg-gradient-to-br backdrop:from-[#0f0f23]/95 backdrop:via-[#1a1a2e]/95 backdrop:to-[#16213e]/95 backdrop:backdrop-blur-xl bg-transparent border-none outline-none w-full scrollbar-show p-0"
         style={{
           position: "fixed",
           inset: "0",
@@ -480,7 +480,7 @@ const HamburgerIcon = ({
                 <div className="w-full max-w-7xl mx-auto">
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 min-h-[calc(100vh-6rem)] sm:min-h-[calc(100vh-8rem)] lg:min-h-[calc(100vh-10rem)] items-center">
                     {/* Navigation Section */}
-                    <div className="flex flex-col justify-center py-2 sm:py-4 md:py-8 lg:py-0 order-2 lg:order-1">
+                    <div className="flex flex-col justify-center order-2 lg:order-1">
                       <motion.h2
                         variants={itemVariants}
                         className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-4 sm:mb-6 md:mb-8 text-center lg:text-left"

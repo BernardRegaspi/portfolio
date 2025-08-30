@@ -94,38 +94,10 @@ const services: Service[] = [
   },
 ];
 
-interface Particle {
-  id: number;
-  left: number;
-  top: number;
-  animationDelay: number;
-  animationDuration: number;
-}
-
 const MyServices = () => {
-  const [particles, setParticles] = useState<Particle[]>([]);
   const [visibleCards, setVisibleCards] = useState<number[]>([]);
 
   useEffect(() => {
-    // Create animated particles
-    const createParticles = () => {
-      const particleCount = 30;
-      const newParticles: Particle[] = [];
-
-      for (let i = 0; i < particleCount; i++) {
-        newParticles.push({
-          id: i,
-          left: Math.random() * 100,
-          top: Math.random() * 100,
-          animationDelay: Math.random() * 6,
-          animationDuration: Math.random() * 3 + 3,
-        });
-      }
-
-      setParticles(newParticles);
-    };
-
-    createParticles();
 
     // Animate cards in sequence
     const timer = setTimeout(() => {
@@ -143,23 +115,6 @@ const MyServices = () => {
     <section id="services" className="min-h-screen relative overflow-hidden">
       {/* Dark theme background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#0f0f23] via-[#1a1a2e] to-[#16213e] z-0"></div>
-
-      {/* Animated particles */}
-      <div className="fixed top-0 left-0 w-full h-full pointer-events-none z-[1]">
-        {particles.map((particle) => (
-          <div
-            key={particle.id}
-            className="absolute w-1 h-1 bg-white/30 rounded-full"
-            style={{
-              left: `${particle.left}%`,
-              top: `${particle.top}%`,
-              animationDelay: `${particle.animationDelay}s`,
-              animationDuration: `${particle.animationDuration}s`,
-              animation: "float 6s ease-in-out infinite",
-            }}
-          />
-        ))}
-      </div>
 
       {/* Main content */}
       <div className="relative z-[2] container mx-auto px-6 py-16">

@@ -65,7 +65,7 @@ const HomePage = () => {
   return (
     <section
       id="home"
-      className="flex flex-col lg:flex-row min-h-screen overflow-hidden relative pt-20"
+      className="flex flex-col xl:flex-row min-h-screen overflow-hidden relative pt-20"
     >
       <PageTransition />
       {/* Dark theme background gradient */}
@@ -88,7 +88,7 @@ const HomePage = () => {
         ))}
       </div>
 
-      <div className="flex-1 flex flex-col justify-center lg:justify-start lg:pt-20 items-start p-4 sm:p-6 md:p-8 lg:p-16 space-y-4 sm:space-y-6 relative z-[2] order-2 lg:order-1">
+      <div className="flex-1 flex flex-col justify-center lg:justify-start lg:pt-20 items-start p-4 sm:p-6 md:p-8 lg:p-16 space-y-4 sm:space-y-6 relative z-[2] order-2 xl:order-1">
         {showText && (
           <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-300 mb-2 sm:mb-4">
             Hi There, I&apos;m{" "}
@@ -149,31 +149,31 @@ const HomePage = () => {
           <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-white text-shadow">
             What you need?
           </h3>
-          <div className="flex flex-wrap gap-4 mt-2">
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-3 sm:gap-4 mt-2 w-full max-w-4xl">
             <Link
               href="/fullstack-development"
-              className="skill-btn full-stack"
+              className="skill-btn full-stack w-full"
               onClick={handleTransition}
             >
               Full Stack Development
             </Link>
             <Link
               href="/graphic-design"
-              className="skill-btn graphic-design"
+              className="skill-btn graphic-design w-full"
               onClick={handleTransition}
             >
               Graphic Design
             </Link>
             <Link
               href="/mobile-development"
-              className="skill-btn mobile-dev"
+              className="skill-btn mobile-dev w-full"
               onClick={handleTransition}
             >
               Mobile Development
             </Link>
             <Link
               href="/virtual-assistant"
-              className="skill-btn virtual-assistant"
+              className="skill-btn virtual-assistant w-full"
               onClick={handleTransition}
             >
               Virtual Assistant
@@ -211,20 +211,18 @@ const HomePage = () => {
         </div>
       </div>
 
-      <div className="flex-1 flex justify-center items-center lg:items-start lg:pt-20 p-4 sm:p-6 md:p-8 relative z-[2] order-1 lg:order-2 min-h-[60vh] sm:min-h-[50vh] lg:min-h-auto">
+      <div className="flex-1 flex justify-center items-center lg:items-start lg:pt-20 p-4 sm:p-6 md:p-8 relative z-[2] order-1 xl:order-2 min-h-[60vh] sm:min-h-[50vh] lg:min-h-auto">
         <FloatingCodeBackground />
         {showText && (
-          <div className="relative z-10 animate-fade-in-up animation-delay-300 w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl mx-auto">
+          <div className="relative z-10 animate-fade-in-up animation-delay-300 w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl mx-auto pt-20">
             <div className="relative flex flex-col items-center justify-center">
               {/* Enhanced Speech Bubble */}
-              <div className="relative mb-4 sm:mb-6 md:mb-8">
-                <div className="bg-white/90 px-4 sm:px-6 md:px-8 py-3 sm:py-4 rounded-2xl sm:rounded-3xl shadow-xl backdrop-blur-sm border border-white/20 hover:scale-105 transition-transform duration-300 max-w-[280px] sm:max-w-none">
-                  <div className="relative">
-                    <p className="text-gray-800 font-medium text-sm sm:text-base md:text-lg lg:text-xl text-center">
-                      Let&apos;s build something amazing together!
-                    </p>
-                    <div className="absolute -bottom-[16px] sm:-bottom-[20px] md:-bottom-[24px] left-1/2 transform -translate-x-1/2 w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 bg-white/90 rotate-45 border-b border-r border-white/20"></div>
-                  </div>
+              <div className="w-full max-w-xs absolute -top-24 left-1/2 transform -translate-x-1/2 bg-white/90 px-8 py-4 rounded-3xl shadow-xl z-20 backdrop-blur-sm border border-white/20 hover:scale-105 transition-transform duration-300">
+                <div className="relative">
+                  <p className="text-gray-800 font-medium text-xl text-center">
+                    Let&apos;s build something amazing together!
+                  </p>
+                  <div className="absolute -bottom-[28px] left-1/2 transform -translate-x-1/2 w-6 h-6 bg-white/90 rotate-45 border-b border-r border-white/20"></div>
                 </div>
               </div>
 

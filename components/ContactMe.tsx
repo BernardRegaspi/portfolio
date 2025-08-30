@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { cn } from "@/lib/utils";
 import {
   FaGithub,
@@ -76,16 +76,7 @@ const socialLinks = [
   },
 ];
 
-interface Particle {
-  id: number;
-  left: number;
-  top: number;
-  animationDelay: number;
-  animationDuration: number;
-}
-
 const ContactMe = () => {
-  const [particles, setParticles] = useState<Particle[]>([]);
   const [formData, setFormData] = useState<ContactForm>({
     name: "",
     email: "",
@@ -94,28 +85,6 @@ const ContactMe = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<string>("");
-
-  useEffect(() => {
-    // Create animated particles
-    const createParticles = () => {
-      const particleCount = 40;
-      const newParticles: Particle[] = [];
-
-      for (let i = 0; i < particleCount; i++) {
-        newParticles.push({
-          id: i,
-          left: Math.random() * 100,
-          top: Math.random() * 100,
-          animationDelay: Math.random() * 6,
-          animationDuration: Math.random() * 3 + 3,
-        });
-      }
-
-      setParticles(newParticles);
-    };
-
-    createParticles();
-  }, []);
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -160,23 +129,6 @@ const ContactMe = () => {
     <section id="contact" className="min-h-screen relative overflow-hidden">
       {/* Dark theme background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#0f0f23] via-[#1a1a2e] to-[#16213e] z-0"></div>
-
-      {/* Animated particles */}
-      <div className="fixed top-0 left-0 w-full h-full pointer-events-none z-[1]">
-        {particles.map((particle) => (
-          <div
-            key={particle.id}
-            className="absolute w-1 h-1 bg-white/30 rounded-full"
-            style={{
-              left: `${particle.left}%`,
-              top: `${particle.top}%`,
-              animationDelay: `${particle.animationDelay}s`,
-              animationDuration: `${particle.animationDuration}s`,
-              animation: "float 6s ease-in-out infinite",
-            }}
-          />
-        ))}
-      </div>
 
       {/* Main content */}
       <div className="relative z-[2] container mx-auto px-6 py-16">
@@ -362,11 +314,11 @@ const ContactMe = () => {
                   />
                 </div>
 
-                <div className="flex flex-col sm:flex-row gap-4 items-center">
+                <div className="flex flex-col gap-4 items-center">
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full sm:w-auto skill-btn px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
+                    className="w-full rounded-lg px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
                   >
                     {isSubmitting ? "Sending..." : "Send Message"}
                   </button>
